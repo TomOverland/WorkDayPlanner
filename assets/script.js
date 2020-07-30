@@ -1,3 +1,5 @@
+$(document).ready() {
+
 let = myDay = [
     {
     id: "0",
@@ -112,3 +114,5 @@ myDay.forEach(function(thisHour) {
             "class": "col-md-2 hour"
         });
 })
+
+};
