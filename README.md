@@ -1,7 +1,7 @@
 # Work-Day-Planner
   
 ## Live site
-This is a link to the deployed application: 
+This is a link to the deployed application: https://tomoverland.github.io/WorkDayPlanner/
 
 ## Demonstration of Application  
 ![demonstration of application](link to gif)
