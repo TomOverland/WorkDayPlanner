@@ -4,7 +4,7 @@
 This is a link to the deployed application: https://tomoverland.github.io/WorkDayPlanner/
 
 ## Demonstration of Application  
-![demonstration of application](https://drive.google.com/file/d/10qyFr4tkREzOpqYuPGAgG1Rl8zuFrEjp/view)
+![demonstration of application](https://github.com/TomOverland/WorkDayPlanner/blob/master/assets/Work%20Day%20Scheduler%20GIF.gif)
 
 ## Description
 This work day planner will allow you to add important events to a daily planner so that you can manage your time effectively.  
