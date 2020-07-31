@@ -66,7 +66,7 @@ $(document).ready(function () {
   ];
 
   // gets data for the header date
-  function getHeaderDate() {
+  function headerDate() {
     let currentHeaderDate = moment().format("dddd, MMMM Do");
     $("#currentDay").text(currentHeaderDate);
   }
@@ -84,7 +84,7 @@ $(document).ready(function () {
   }
 
   // sets any existing localStorage data to the view if it exists
-  function init() {
+  function startScheduler() {
     let storedDay = JSON.parse(localStorage.getItem("dayArray"));
 
     if (storedDay) {
@@ -96,7 +96,7 @@ $(document).ready(function () {
   }
 
   // loads header date
-  getHeaderDate();
+  headerDate();
 
   // creates the visuals for the scheduler body
   dayArray.forEach(function (thisHour) {
@@ -144,7 +144,7 @@ $(document).ready(function () {
   });
 
   // loads any existing localstorage data after components created
-  init();
+  startScheduler();
 
   // saves data to be used in localStorage
   $(".saveBtn").on("click", function (event) {
