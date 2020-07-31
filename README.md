@@ -1,4 +1,5 @@
 # Work-Day-Planner
+This work day planner will allow you to add important events to a daily planner so that you can manage your time effectively.    
   
 ## Live site
 This is a link to the deployed application: https://tomoverland.github.io/WorkDayPlanner/
@@ -6,8 +7,7 @@ This is a link to the deployed application: https://tomoverland.github.io/WorkDa
 ## Demonstration of Application  
 ![demonstration of application](https://github.com/TomOverland/WorkDayPlanner/blob/master/assets/Work%20Day%20Scheduler%20GIF.gif)
 
-## Description
-This work day planner will allow you to add important events to a daily planner so that you can manage your time effectively.  
+## Description  
 When you open the planner the current day is displayed at the top of the calendar.  
 When you scroll down, you are presented with timeblocks for standard business hours.  
 When you view the timeblocks for that day, each timeblock is color coded to indicate whether it is in the past, present, or future.  
