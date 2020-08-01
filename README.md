@@ -14,6 +14,11 @@ When you view the timeblocks for that day, each timeblock is color coded to indi
 When you click into a timeblock, then the text for that event is saved in local storage.  
 When you refresh the page the saved events will persist.
 
+## Built With
+Moment.js - Used the moment library to display dates and times in my JavaScript.
+Bootstrap - Used to structure my HTML.
+jQuery - Used to traverse the DOM and handle events.
+
 ## Installation
 If all files are kept in a single folder a web browser should be able to run the project.  
 You will need an internet connection.  
