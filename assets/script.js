@@ -1,5 +1,7 @@
+// This makes it so the javascript doesn't run until the html page is loaded
 $(document).ready(function () {
-  let dayArray = [
+  // Variable that allows me to loop through planner
+  let planner = [
     {
       id: "0",
       hour: "09",
@@ -73,40 +75,40 @@ $(document).ready(function () {
 
   // saves data to localStorage
   function saveReminders() {
-    localStorage.setItem("dayArray", JSON.stringify(dayArray));
+    localStorage.setItem("planner", JSON.stringify(planner));
   }
 
-  // sets any data in localStorage to the view
+  // displays any text that the user has saved to localStorage
   function displayReminders() {
-    dayArray.forEach(function (_thisHour) {
+    planner.forEach(function (_thisHour) {
       $(`#${_thisHour.id}`).val(_thisHour.reminder);
     });
   }
 
-  // sets any existing localStorage data to the view if it exists
+  // Gets items from localStorage, then runs the saveReminders to save any new reminders, and also runs the displayReminders to show any existing
   function startScheduler() {
-    let storedDay = JSON.parse(localStorage.getItem("dayArray"));
+    let storedDay = JSON.parse(localStorage.getItem("planner"));
 
     if (storedDay) {
-      dayArray = storedDay;
+      planner = storedDay;
     }
 
     saveReminders();
     displayReminders();
   }
 
-  // loads header date
+  // displays the current date on the header
   headerDate();
 
-  // creates the visuals for the scheduler body
-  dayArray.forEach(function (thisHour) {
-    // creates timeblocks row
+  // This changes the HTML to style the scheduler, one col for hours, one col for input, and one col for saving
+  planner.forEach(function (thisHour) {
+    // Creates the row that time cols go into
     let hourRow = $("<form>").attr({
       class: "row",
     });
     $(".container").append(hourRow);
 
-    // creates time field
+    // Creates the cols for times
     let hourField = $("<div>")
       .text(`${thisHour.hour}${thisHour.meridiem}`)
       .attr({
@@ -134,7 +136,7 @@ $(document).ready(function () {
       });
     }
 
-    // creates save button
+    // creates save button using save icon from font awesome
     let saveButton = $("<i class='far fa-save fa-lg'></i>");
     let savePlan = $("<button>").attr({
       class: "col-md-1 saveBtn",
@@ -153,7 +155,7 @@ $(document).ready(function () {
       .siblings(".description")
       .children(".future")
       .attr("id");
-    dayArray[saveIndex].reminder = $(this)
+    planner[saveIndex].reminder = $(this)
       .siblings(".description")
       .children(".future")
       .val();
