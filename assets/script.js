@@ -67,13 +67,13 @@ $(document).ready(function () {
     },
   ];
 
-  // gets data for the header date
+  // gets date info for the header
   function headerDate() {
     let currentHeaderDate = moment().format("dddd, MMMM Do");
     $("#currentDay").text(currentHeaderDate);
   }
 
-  // saves data to localStorage
+  // saves reminders to localStorage
   function saveReminders() {
     localStorage.setItem("planner", JSON.stringify(planner));
   }
@@ -85,14 +85,14 @@ $(document).ready(function () {
     });
   }
 
-  // Gets items from localStorage, then runs the saveReminders to save any new reminders, and also runs the displayReminders to show any existing
-  function startScheduler() {
+  // Gets items from localStorage, then parses through the planner array
+  function startPlanner() {
     let storedDay = JSON.parse(localStorage.getItem("planner"));
 
     if (storedDay) {
       planner = storedDay;
     }
-
+    //saves any new inputs to local storage, and displays any already stored inputs
     saveReminders();
     displayReminders();
   }
@@ -102,7 +102,7 @@ $(document).ready(function () {
 
   // This changes the HTML to style the scheduler, one col for hours, one col for input, and one col for saving
   planner.forEach(function (thisHour) {
-    // Creates the row that time cols go into
+    // Using bootstrap, this will create the row that time cols go into
     let hourRow = $("<form>").attr({
       class: "row",
     });
@@ -115,10 +115,11 @@ $(document).ready(function () {
         class: "col-md-2 hour",
       });
 
-    // creates schdeduler data
+    // This variable will create the input field allowing the user to save reminders
     let hourPlan = $("<div>").attr({
       class: "col-md-9 description p-0",
     });
+    // This variable will change the color of planner data to past, present, and future classes
     let planData = $("<textarea>");
     hourPlan.append(planData);
     planData.attr("id", thisHour.id);
@@ -146,7 +147,7 @@ $(document).ready(function () {
   });
 
   // loads any existing localstorage data after components created
-  startScheduler();
+  startPlanner();
 
   // saves data to be used in localStorage
   $(".saveBtn").on("click", function (event) {
@@ -159,7 +160,6 @@ $(document).ready(function () {
       .siblings(".description")
       .children(".future")
       .val();
-    console.log(saveIndex);
     saveReminders();
     displayReminders();
   });
