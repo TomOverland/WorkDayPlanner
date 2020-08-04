@@ -15,9 +15,13 @@ When you click into a timeblock, then the text for that event is saved in local 
 When you refresh the page the saved events will persist.
 
 ## Built With
+HTML  
+CSS  
+JavaScript  
 Moment.js - Used the moment library to display dates and times in my JavaScript.  
 Bootstrap - Used to structure my HTML.  
 jQuery - Used to traverse the DOM and handle events.  
+Font Awesome - Used to generate the save icons  
 
 ## Installation
 If all files are kept in a single folder a web browser should be able to run the project.  
